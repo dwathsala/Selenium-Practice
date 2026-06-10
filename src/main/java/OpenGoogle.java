@@ -9,5 +9,6 @@ public class OpenGoogle {
 
         System.setProperty("webdriver.chrome.driver","D:\\SeliniumQA\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
+        driver.get("https://www.google.com/");     //to redirect to URL
     }
 }
