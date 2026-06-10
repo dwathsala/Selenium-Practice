@@ -15,13 +15,35 @@
     </properties>
 
     <dependencies>
+        <!--System.SetProperty() ====> stage 1 -->
         <!-- Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
             <scope>compile</scope>
+        </dependency> -->
+
+
+        <!-- Selenium Dependency ====> STAGE 03-->
+        <!-- Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.42.0</version>
+            <scope>compile</scope>
         </dependency>
+
+
+
+        <!--WebDriverManager ====> stage 2 -->
+        <!-- Source: https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <!--<dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>6.3.4</version>
+            <scope>compile</scope>
+        </dependency>-->
     </dependencies>
 
 </project>
