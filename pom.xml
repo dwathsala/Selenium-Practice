@@ -34,6 +34,15 @@
             <scope>compile</scope>
         </dependency>
 
+        <!--testng dependency for test with using "@test" notation-->
+        <!-- Source: https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.10.2</version>
+            <scope>test</scope>
+        </dependency>
+
 
 
         <!--WebDriverManager ====> stage 2 -->
