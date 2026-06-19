@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class LinkExample {
 
     WebDriver driver;          //make driver as public reference for all method include openLinkTestPage and LinkTest.
@@ -13,7 +15,7 @@ public class LinkExample {
     //For that we can use @BeforeMethod annotation..
     @BeforeMethod
     public void openLinkTestPage(){
-        WebDriver driver = new ChromeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();   //to display the page in full screen/window..
         driver.get("https://www.leafground.com/link.xhtml");
     }
@@ -31,11 +33,36 @@ public class LinkExample {
         String path = whereToGo.getAttribute("href");
         System.out.println("This link is going to : " + path );
 
+
         //3.Am I broken link?
+        WebElement brokenLink = driver.findElement(By.linkText("Broken?"));
+        brokenLink.click();
+
+        String title = driver.getTitle();  //use getTitle() to get the title of the page...
+        if (title.contains("404")){
+            System.out.println("The link is broken link.");
+        }else {
+            System.out.println("Not broken.");
+        }
+        driver.navigate().back();
+
+
         //4.Duplication link
+        //homeLink.click();  =====>StaleElementReferenceException error
+        //to solve this error we need to find same element again
+        WebElement homeLink1 = driver.findElement(By.linkText("Go to Dashboard"));
+        homeLink1.click();
+        driver.navigate().back();
+
         //5.Count page links
+        List<WebElement> countFullPageLinks = driver.findElements(By.tagName("a"));
+        int pageLinkCount = countFullPageLinks.size();
+        System.out.println("Counts of Full page links: " + pageLinkCount);
+
+
         //6.Count layout links
-
-
+        WebElement layoutElement = driver.findElement(By.className("layout-main-content"));
+        List<WebElement> countOfLayoutLink = layoutElement.findElements(By.tagName("a"));
+        System.out.println("count of layout links: " + countOfLayoutLink.size());
     }
 }
