@@ -13,7 +13,7 @@ public class TextBoxExample {
     //if there is to do something before the test we can add it before @Test withing separate method..For that we can use @BeforeMethod annotation..
 
     @BeforeMethod  //Preconditions of manual testing
-    public void openLinkTestPage(){
+    public void openTextBoxPage(){
 
         //to change the browser version
         /*ChromeOptions chromeOptions = new ChromeOptions();
