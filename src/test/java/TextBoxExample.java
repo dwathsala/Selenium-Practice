@@ -3,6 +3,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -13,9 +14,16 @@ public class TextBoxExample {
 
     @BeforeMethod  //Preconditions of manual testing
     public void openLinkTestPage(){
-        driver = new ChromeDriver();
+
+        //to change the browser version
+        /*ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setBrowserVersion("148");
+        driver = new ChromeDriver(chromeOptions); */  //if change the browser version must need to pass "chromeOptions" as parameter
+
+        driver = new ChromeDriver();  //use when don't change the browser version
         driver.manage().window().maximize();   //to display the page in full screen/window..
         driver.get("https://www.leafground.com/input.xhtml");
+        //Thread.sleep(Long.parseLong("3"));   //use to identify how much time to take for load the page
     }
 
     @Test
