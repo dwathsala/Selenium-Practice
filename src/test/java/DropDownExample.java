@@ -74,6 +74,13 @@ public class DropDownExample {
         }
     }
 
-    //3. Handle Hidden Auto Suggestions Drop Down And Search using DOM Debugger Trick
+
+    //3. Handle Hidden Auto Suggestions Drop Down And Search using DOM Debugger Trick (when element hide click the inspect)
+    //1 trick(with using selecterhub) ===> debugeer
+
+    /*2 trick(without using selecterhub) ===> setTimeout(function(){
+                                                  debugger;
+                                                  },3000);
+     */
 
 }
