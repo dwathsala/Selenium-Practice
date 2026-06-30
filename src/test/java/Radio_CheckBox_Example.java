@@ -63,6 +63,13 @@ public class Radio_CheckBox_Example {
 
 
         //2. Select the age group(If not selected)
+        WebElement myeAgeGroup = driver.findElement(By.id("j_idt87:age:0"));
+        boolean isChecked = myeAgeGroup.isSelected();
+        if (!isChecked){
+            //myeAgeGroup.click(); ===> not work
+
+            driver.findElement(By.xpath("//label[@for='j_idt87:age:0']")).click();
+        }
 
     }
 
